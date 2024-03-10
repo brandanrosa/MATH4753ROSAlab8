@@ -1,0 +1,19 @@
+---
+title: "MATH4753ROSAlab8"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{MATH4753ROSAlab8}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(MATH4753ROSAlab8)
+```
