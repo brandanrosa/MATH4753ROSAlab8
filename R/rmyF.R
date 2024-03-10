@@ -26,7 +26,7 @@ rmyF <- function(iter) {
                 ylim = c(0, 0.4),
                 xlim = c(0, 14))
 
-  graphics::curve(dgamma(x, shape = 2, scale = 1), add = TRUE, col = "hotpink", lwd = 3)
+  graphics::curve(dgamma(x, shape = 2, scale = 1), add = TRUE, col = "blue", lwd = 3)
 
   op <- optimize(f, lower = 0, upper = 20)
 }
