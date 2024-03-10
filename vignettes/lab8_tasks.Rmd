@@ -20,6 +20,106 @@ knitr::opts_chunk$set(
 library(MATH4753ROSAlab8)
 ```
 
+# **Tasks**
+
+## Task 1 - Theory
+
+### Q1
+
+```{r, echo=FALSE, out.width="600px", fig.align="center"}
+knitr::include_graphics("C:/R_Packages/MATH4753ROSAlab8/vignettes/1.JPG")
+```
+
+### Q2
+
+```{r, echo=FALSE, out.width="600px", fig.align="center"}
+knitr::include_graphics("C:/R_Packages/MATH4753ROSAlab8/vignettes/2.JPG")
+```
+
+
+### Q3
+
+```{r, echo=FALSE, out.width="600px", fig.align="center"}
+knitr::include_graphics("C:/R_Packages/MATH4753ROSAlab8/vignettes/3.JPG")
+```
+
+### Q4
+
+Recall that $A = \frac{X}{X+Y}$ with $x,y>0$. From this it is apparent that $0<A<1$. Since $0<A<1$ and that $g(a)=1$ from Q3 above, it follows that $g(a)$ is the probability density for a uniform with $\alpha = \beta = 1$. Therefore 
+$$
+A \sim Unif(0, 1)
+$$
+
+### Q5
+
+```{r, echo=FALSE, out.width="600px", fig.align="center"}
+knitr::include_graphics("C:/R_Packages/MATH4753ROSAlab8/vignettes/5.JPG")
+```
+
+### Q6
+
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+# Plot A ~ Unif(0,1)
+x <- seq(0,1,length = 100)
+y <- dunif(x, min = 0, max = 1)
+plot(x, y, type = "l", 
+     main = "Plot of g(a)", 
+     xlab = "a", 
+     ylab = "g_1(a)",
+     col = "hotpink",
+     lwd = 2)
+
+## Plot B ~ Gamma(2,1)
+h <- seq(0, 10, length = 1000)
+k <- dgamma(h, shape = 2, scale = 1)
+plot(h, k, type = "l",
+     main = "Plot of g(b)",
+     xlab = "b",
+     ylab = "g_2(b)",
+     col = "green",
+     lwd = 3)
+```
+
+
+
+### Q7
+
+```{r, echo=FALSE, out.width="600px", fig.align="center"}
+knitr::include_graphics("C:/R_Packages/MATH4753ROSAlab8/vignettes/7.JPG")
+```
+
+### Q8
+
+```{r, echo=FALSE, out.width="600px", fig.align="center"}
+knitr::include_graphics("C:/R_Packages/MATH4753ROSAlab8/vignettes/8.JPG")
+```
+
+### Q9
+
+Since $B \sim Gamma(\alpha = 2, \beta = 1)$, it follows that 
+$$
+E(B)=\mu_B=\alpha \beta= 2
+$$
+
+
+### Q10
+
+```{r, echo=FALSE, out.width="600px", fig.align="center"}
+knitr::include_graphics("C:/R_Packages/MATH4753ROSAlab8/vignettes/10.JPG")
+```
+
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+x = seq(0, 8, .01)
+shape = 2
+rate = 1
+cdf = pgamma(x, shape, rate)
+plot(x,cdf, type = "l",
+     col = "maroon",
+     lwd = 3,
+     main = "Plot of G_B(b)",
+     xlab = "b",
+     ylab = "F(b)")
+```
 
 
 
