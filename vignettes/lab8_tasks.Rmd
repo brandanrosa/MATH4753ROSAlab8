@@ -121,8 +121,96 @@ plot(x,cdf, type = "l",
      ylab = "F(b)")
 ```
 
+## Task 2 - Simulation
 
+### Q1
 
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+mysimA <- function(iter) {
+
+  x <- iter
+
+  randos <- runif(n = x, min = 0, max = 1)
+
+  histo <- graphics::hist(randos, xlab = "ASim",
+                freq = FALSE,
+                col = "grey",
+                main = "Histogram of ASim")
+
+  graphics::curve(dunif(x, 0, 1), add = TRUE, col = "hotpink", lwd = 3, to = 1)
+
+  q <- quantile(randos, probs = c(.25, .5, .975))
+  meanA <- mean(randos)
+  varA <- var(randos)
+  un <- dunif(x, 0, 1)
+  varAtheory <- (max(randos) - min(randos))^2/12
+
+  l <- list(q = q, meanA = meanA, varA = varA, varAtheory = varAtheory)
+  print(l)
+}
+mysimA(iter = 10000)
+```
+
+### Q2
+
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+mysimB <- function(iter) {
+  x <- iter
+  rands <- rgamma(n = iter, 2, 1)
+  histo <- graphics::hist(rands, xlab = "BSim",
+                freq = FALSE,
+                col = "grey",
+                main = "Histogram of BSim",
+                ylim = c(0, 0.4),
+                xlim = c(0, 14))
+
+  graphics::curve(dgamma(x, shape = 2, scale = 1), add = TRUE, col = "green", lwd = 3)
+
+  q <- quantile(rands, probs = c(.25, .5, .975))
+  meanB <- mean(rands)
+  varB <- var(rands)
+  gam <- dgamma(x, shape = 2, scale = 1)
+  varBtheory <- 2*1^2
+
+  l <- list(q=q, meanB=meanB, varB=varB, varBtheory=varBtheory)
+  l
+}
+mysimB(10000)
+```
+
+### Q3
+
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+rmyF <- function(iter) {
+  x <- NULL
+  w <- runif(1)
+  rands <- rgamma(n = iter, 2, 1)
+  f <- function(x) {
+    abs(1-w-x*exp(-x)-exp(-x))
+  }
+
+  histo <- hist(rands, xlab = "B",
+                freq = FALSE, 
+                col = "gray",
+                main = "Histogram of y",
+                ylim = c(0, 0.4),
+                xlim = c(0, 14)
+                )
+  
+  curve(dgamma(x, shape = 2, scale = 1), add = TRUE, col = "hotpink", lwd = 3)
+  
+  op <- optimize(f, lower = 0, upper = 20)
+  q <- quantile(rands, probs = c(.25, .5, .975))
+  meanF <- mean(rands)
+  varF <- var(rands)
+  gam <- dgamma(iter, shape = 2, scale = 1)
+  varFtheory <- 2*1^2
+  
+  l <- list(opimization=op, q=q, meanF=meanF, varF=varF, varFtheory=varFtheory)
+  l
+}
+rmyF(10000)
+```
 
 
 
