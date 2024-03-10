@@ -1,8 +1,8 @@
 ---
-title: "MATH4753ROSAlab8"
+title: "Lab 8 Tasks"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{MATH4753ROSAlab8}
+  %\VignetteIndexEntry{Lab 8 Tasks}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -11,8 +11,8 @@ vignette: >
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>",
-  message = FALSE,
-  warning = FALSE
+  warning = FALSE,
+  message = FALSE
 )
 ```
 
@@ -20,9 +20,13 @@ knitr::opts_chunk$set(
 library(MATH4753ROSAlab8)
 ```
 
-# Introduction
 
-This package is primarily concerned with simulations of continuous distributions; the Uniform and the Gamma particularly.
+
+
+
+
+
+
 
 
 
