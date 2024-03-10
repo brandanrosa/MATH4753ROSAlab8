@@ -1,6 +1,7 @@
 library(shiny)
 
 ui <- fluidPage(
+  theme = bslib::bs_theme(bootswatch = "darkly"),
   titlePanel("w-F Simulation: B ~ Gamma(2,1)"),
   sidebarLayout(
     sidebarPanel(
