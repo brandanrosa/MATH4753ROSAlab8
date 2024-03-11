@@ -10,7 +10,7 @@ rmyF(iter)
 \item{iter}{iter Number of iterations for the simulation}
 }
 \value{
-a histogram of the simulation with a theoretical curve
+a histogram of the simulation with a theoretical curve and a named list containing: optimaization min, quantiles, mean, variance (of the sim), and the theoretical variance.
 }
 \description{
 a w-F theorem simulation of a Gamma(alpha=2, beta=1) using an objective function approach.

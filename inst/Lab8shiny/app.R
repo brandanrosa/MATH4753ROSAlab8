@@ -5,7 +5,7 @@ ui <- fluidPage(
   titlePanel("w-F Simulation: B ~ Gamma(2,1)"),
   sidebarLayout(
     sidebarPanel(
-      numericInput("iter", "Number of Iterations:", 1000, min = 50, max = 1000000),
+      numericInput("iter", "Number of Iterations:", 1000, min = 1, max = 1000000),
       strong("Note: The pink curve is the theoretical distribution for aGamma(2,1)",
         style = "color:hotpink"),
     ),
@@ -19,6 +19,7 @@ server <- function(input, output, session) {
     rands <- rgamma(input$iter, shape = 2, scale =  1)
     hist(rands,
          freq = FALSE,
+         breaks = "Sturges",
          col = "grey",
          main = "Histogram of B",
          xlab = "B",

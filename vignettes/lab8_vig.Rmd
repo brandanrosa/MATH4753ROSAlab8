@@ -1,5 +1,6 @@
 ---
 title: "MATH4753ROSAlab8"
+author: "Brandan Rosa"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{MATH4753ROSAlab8}
@@ -22,9 +23,33 @@ library(MATH4753ROSAlab8)
 
 # Introduction
 
-This package is primarily concerned with simulations of continuous distributions; the Uniform and the Gamma particularly.
+This package is primarily concerned with simulations of continuous distributions; the Uniform and the Gamma distributions particularly. The package contains three functions and a shiny app. Two of the functions, "mysimA" and "mysimB" simulate a `unif(0,1)` and a `gamma(2,1)`, respectively. 
 
+The function "rmyF" simulates an objective function `B` where B is distributed `gamma(2,1)`. Further, this function seeks to find the roots of the underlying function- that is to calculate the minimum of the absolute value of the objective function.
 
+Finally the shiny app, "lab8shiny" allows the user to type in a number of iterations to simulate the `B` function from "rmyF". The functions also produce a named list with various summary statistics.
+
+# Examples 
+
+## `mysimA(iter = 10000)`
+
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+mysimA(iter = 10000)
+```
+
+## `mysimB(iter = 10000)`
+
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+mysimB(iter = 10000)
+```
+
+## `rmyF(iter = 10000)`
+
+```{r, fig.align = "center", fig.width=7, fig.height=5}
+rmyF(iter = 10000)
+```
+
+## lab8shiny
 
 
 
