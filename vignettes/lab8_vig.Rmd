@@ -51,7 +51,9 @@ rmyF(iter = 10000)
 
 ## lab8shiny
 
+To view this app, run the following code in `R`
 
+`shiny::runGitHub(repo = "MATH4753ROSAlab8", username = "brandanrosa", subdir = "inst/Lab8shiny")`
 
 
 
